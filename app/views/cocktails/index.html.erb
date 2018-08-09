@@ -1,0 +1,18 @@
+<div>
+    <h1>Wooop! <strong>Cock</strong>tail <strong>O'Clock!</strong></h1>
+    
+    <h3>Want to make a cocktail?</h3>
+
+        <% @cocktails.each do |cocktail| %>
+          <li class="list-group-item">
+            <%= link_to cocktail.name, cocktail_path(cocktail) %>
+            <%= link_to "Delete Cocktail", cocktail_path(cocktail.id),
+            method: :delete,
+            data: { confirm: 'Are you sure?'} %>
+          </li>
+        <% end %>
+        
+
+    <%= link_to "make a cocktail!", new_cocktail_path(@cocktail) %>
+
+</div>

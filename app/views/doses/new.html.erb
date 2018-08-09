@@ -1,0 +1,8 @@
+<h1>Create a New Dose</h1>
+
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+    <%= f.label :description %>
+    <%= f.select :description, ['a handful', 'a pinch', 'a shit ton'] %>
+    <%= f.association :ingredient %>
+    <%= f.submit %>
+<% end %>
