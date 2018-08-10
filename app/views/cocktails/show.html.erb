@@ -1,6 +1,7 @@
 <div>
     <h1 class="title">Check out this great Cocktail!</h1>
     <h3 class="drink"><%= @cocktail.name %></h3>
+    <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
 
     <h4>Make one!</h4>
     <div class="ingredients_list">
@@ -12,9 +13,9 @@
             method: :delete, 
             data: { confirm: 'Are you sure?' }, class: "btn btn-primary" %>
         </ul>
-        <p><%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %></p>
       <% end %>
     </div>
+
 
     <div class="buttons">
       <div>
@@ -25,5 +26,4 @@
         <%= link_to "add some boozey ingredients", new_cocktail_dose_path(@cocktail.id), class: "btn btn-success" %>
       </div>
     </div>
-
 </div>
