@@ -7,6 +7,17 @@
 .headings {
     text-align: justify;
     justify-content: center;
+    // border: 1px solid black;
+}
+
+#banner-typed-text {
+    margin-left: 15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: blueviolet;
+}
+
+h1 {
+    margin: 15px;
 }
 
 .buttons {
@@ -28,7 +39,6 @@
 .card-image {
     width: 100%;
     height: 66%;
-    background: url('https://picsum.photos/270/164/?random');
     background-size: cover;
     border-radius: 3px 3px 0px 0px;
 }

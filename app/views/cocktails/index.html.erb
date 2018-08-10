@@ -2,6 +2,8 @@
   <div class="headings">
     <h1>Wooop! <strong>Cock</strong>tail <strong>O'Clock!</strong></h1>
 
+    <p><span id="banner-typed-text"></span></p>
+
     <%= link_to "Want to add your own cocktail!?", new_cocktail_path(@cocktail), class: "buttons btn btn-danger"%>
   </div>
 
@@ -10,7 +12,7 @@
     <div class="col-sm-6 col-md-4 col-lg-3">
       <div class="card-outline">
         <div class="card-content card-image">
-          
+          <%= cl_image_tag cocktail.photo, height: 165, width: 270, crop: :fill %>
         </div>
         <div class="card-content card-body">
           <div>
