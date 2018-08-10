@@ -1,24 +1,28 @@
 <div>
-    <h1>Check out this great Cocktail!</h1>
-    <h3><%= @cocktail.name %></h3>
+    <h1 class="title">Check out this great Cocktail!</h1>
+    <h3 class="drink"><%= @cocktail.name %></h3>
 
+    <h4>Make one!</h4>
+    <div class="ingredients_list">
+      <% @cocktail.doses.each do |dose| %>
+        <p><%= dose.description %> of:</p>
+        <ul>
+        <li><%= dose.ingredient.name %></li>
+        <%= link_to "Delete", dose_path(dose), 
+            method: :delete, 
+            data: { confirm: 'Are you sure?' }, class: "btn btn-primary" %>
+        </ul>
+      <% end %>
+    </div>
 
-     
-
-    <% @cocktail.doses.each do |dose| %>
-      <p><%= dose.description %> of:</p>
-      <ul>
-      <li><%= dose.ingredient.name %></li>
-      <%= link_to "Delete", dose_path(dose), 
-          method: :delete, 
-          data: { confirm: 'Are you sure?' } %>
-      </ul>
-    <% end %>
-
-
-    <%= link_to "back to booze", cocktails_path(@cocktail) %>
-    <br>
-    <br>
-    <%= link_to "add some boozey ingredients", new_cocktail_dose_path(@cocktail.id) %>
+    <div class="buttons">
+      <div>
+        <%= link_to "back to booze", cocktails_path(@cocktail), class: "btn btn-warning" %>
+      </div>
+      <br>
+      <div>
+        <%= link_to "add some boozey ingredients", new_cocktail_dose_path(@cocktail.id), class: "btn btn-success" %>
+      </div>
+    </div>
 
 </div>

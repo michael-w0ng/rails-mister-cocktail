@@ -1,5 +1,9 @@
-<%= simple_form_for @cocktail do |f| %>
-    <%= f.input :name %>
-    <%#= f.input :ingredients %>
-    <%= f.submit %>
-<% end %>
+<div class="container">
+  <div class="form">  
+    <%= simple_form_for @cocktail do |f| %>
+      <%= f.input :name %>
+      <%#= f.association :ingredients %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>

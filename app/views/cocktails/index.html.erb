@@ -1,18 +1,37 @@
-<div>
+<div class="container">
+  <div class="headings">
     <h1>Wooop! <strong>Cock</strong>tail <strong>O'Clock!</strong></h1>
-    
-    <h3>Want to make a cocktail?</h3>
 
-        <% @cocktails.each do |cocktail| %>
-          <li class="list-group-item">
-            <%= link_to cocktail.name, cocktail_path(cocktail) %>
-            <%= link_to "Delete Cocktail", cocktail_path(cocktail.id),
-            method: :delete,
-            data: { confirm: 'Are you sure?'} %>
-          </li>
-        <% end %>
-        
+    <%= link_to "Want to add your own cocktail!?", new_cocktail_path(@cocktail), class: "buttons btn btn-danger"%>
+  </div>
 
-    <%= link_to "make a cocktail!", new_cocktail_path(@cocktail) %>
-
+  <div class="row">
+  <% @cocktails.each do |cocktail| %>
+    <div class="col-sm-6 col-md-4 col-lg-3">
+      <div class="card-outline">
+        <div class="card-content card-image">
+          
+        </div>
+        <div class="card-content card-body">
+          <div>
+            <%= link_to cocktail.name, cocktail_path(cocktail), class: "cocktail-name" %>
+          </div>
+          <div>
+            <%= link_to cocktail_path(cocktail.id),
+                  method: :delete,
+                  data: { confirm: 'Are you sure?'} do %>
+                  <i class="button far fa-trash-alt"></i>
+                  <% end %>
+          </div>
+        </div>
+      </div>
+    </div>  
+  <% end %>
+  </div>
 </div>
+
+
+
+
+
+
