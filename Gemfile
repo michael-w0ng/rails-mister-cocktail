@@ -46,6 +46,11 @@ gem 'simple_form'
 
 gem 'dotenv-rails', groups: [:development, :test]
 
+gem 'cloudinary'
+
+gem 'carrierwave', '~> 1.2'
+
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
